@@ -42,7 +42,7 @@ services:
     container_name: ${PROJECT_NAME}-nginx
     volumes:
       - ./docker/nginx/nginx.conf.template:/etc/nginx/templates/nginx.conf.template
-      - ./applications/backend:/symfony
+      - ./application/backend:/symfony
     depends_on:
       - php-fpm
     ports:

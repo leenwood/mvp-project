@@ -1,2 +1,3 @@
 .env
-docker/postgresql/data/
+docker/postgres/data
+./.idea
