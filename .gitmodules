@@ -1,0 +1,3 @@
+[submodule "application/backend"]
+	path = application/backend
+	url = ssh://git@git.artsofte.ru:2244/profitbase/hr-parser/backend.git
