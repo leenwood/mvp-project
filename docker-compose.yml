@@ -47,3 +47,16 @@ services:
       - php-fpm
     ports:
       - "80:80"
+
+
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    container_name: ${PROJECT_NAME}-rabbitmq
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    volumes:
+      - ./docker/rabbitmq/data:/var/lib/rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RM_USER}
+      RABBITMQ_DEFAULT_PASS: ${RM_PASSWORD}
