@@ -22,7 +22,7 @@ services:
     environment:
       POSTGRES_PASSWORD: ${PG_PASSWORD}
       POSTGRES_USER: ${PG_USER}
-      POSTGRES_DATABASE: ${PG_DATABASE}
+      POSTGRES_DB: ${PG_DATABASE}
     volumes:
       - ./docker/postgres/data/:/var/lib/postgresql/data/
     ports:
@@ -47,3 +47,16 @@ services:
       - php-fpm
     ports:
       - "80:80"
+
+
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    container_name: ${PROJECT_NAME}-rabbitmq
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    volumes:
+      - ./docker/rabbitmq/data:/var/lib/rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RM_USER}
+      RABBITMQ_DEFAULT_PASS: ${RM_PASSWORD}

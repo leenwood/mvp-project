@@ -13,7 +13,7 @@ RUN set -xe \
     && adduser --disabled-password --uid 1000 www
 
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
-RUN install-php-extensions opcache soap bcmath zip sockets pdo pdo_pgsql gd
+RUN install-php-extensions opcache soap bcmath zip sockets pdo pdo_pgsql gd amqp
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 

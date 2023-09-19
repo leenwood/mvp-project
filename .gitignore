@@ -1,3 +1,4 @@
 .env
+docker/rabbitmq/data
 docker/postgres/data
 ./.idea
